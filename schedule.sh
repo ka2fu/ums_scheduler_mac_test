@@ -98,9 +98,8 @@ while [[ $# -gt 0 ]]; do
 done
 # ───────────────────────────────────────────────────────────────
 
-echo "sleep time = ${SLEEP_TIME}"
-echo "wake time = ${WAKE_TIME}"
+# 毎日同じ時間で停止/起動をスケジュール
+# sudo pmset repeat shutdown MTWRFSU "$SLEEP_TIME" wakeorpoweron MTWRFSU "$WAKE_TIME"
+sudo pmset repeat sleep MTWRFSU "$SLEEP_TIME" wakeorpoweron MTWRFSU "$WAKE_TIME"
 
-sudo pmset repeat shutdown MTWRFSU "$SLEEP_TIME" wakeorpoweron MTWRFSU "$WAKE_TIME"
-
-echo "スケジューる成功しました" >&2
+echo "スケジュールに成功しました。\n停止時間: ${SLEEP_TIME}, 起動時間: ${WAKE_TIME}"

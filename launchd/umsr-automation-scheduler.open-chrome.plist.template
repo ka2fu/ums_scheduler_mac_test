@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" 
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <!-- 起動時に実行 -->
+  <key>RunAtLoad</key>
+  <true/>
+
+  <!-- 実行コマンド -->
+  <key>ProgramArguments</key>
+  <array>
+    <!-- <string>/Users/youruser/scripts/open_chrome.sh</string> -->
+    <string>__SCRIPT_PATH__</string>    
+  </array>
+
+  <!-- 標準出力／標準エラーをログに残す -->
+  <key>StandardOutPath</key>
+  <string>/tmp/open_chrome.out</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/open_chrome.err</string>
+</dict>
+</plist>
