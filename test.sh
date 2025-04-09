@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # ── plistにパスを注入 ───────────────────────────────────────────────
-SCRIPTS_PATH="$HOME/umsr-automation-scheduler-scripts/open_chrome.sh"
+SCRIPT_PATH="$HOME/umsr-automation-scheduler-scripts/open_chrome.sh"
 TEMPLATE="launchd/umsr-automation-scheduler.open-chrome.plist.template"
 DEST=~/Library/LaunchAgents/umsr-automation-scheduler.open-chrome.plist
 
