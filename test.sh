@@ -14,8 +14,11 @@ chmod +x ~/umsr-automation-scheduler-scripts/open_chrome.sh
 # launchddをロード
 mkdir -p ~/Library/LaunchAgents
 sed "s|__SCRIPT_PATH__|$SCRIPT_PATH|g" "$TEMPLATE" > "$DEST"
-launchctl unload "$DEST" 2>/dev/null || true
-launchctl load   "$DEST"
+# launchctl unload "$DEST" 2>/dev/null || true
+# launchctl load   "$DEST"
+launchctl bootout gui/$(id -u) "$DEST" 2>/dev/null
+launchctl bootstrap gui/$(id -u) "$DEST"
+
 
 echo "LaunchAgent をインストールしました: $DEST"
 # ───────────────────────────────────────────────────────────────
